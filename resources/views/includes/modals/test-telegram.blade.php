@@ -6,11 +6,12 @@
 
                 <!--begin::Close-->
                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
+                    <i class="ki-duotone ki-cross fs-1 close-test-telegram"><span class="path1"></span><span class="path2"></span></i>
                 </div>
                 <!--end::Close-->
             </div>
-
+            <form id="test_telegram_form">
+                @csrf
             <div class="modal-body">
                 <div class="notice d-flex bg-light-warning rounded border-warning border border-dashed p-6 mb-8">
                     <!--begin::Icon-->
@@ -36,18 +37,18 @@
                                 class="path2"></span><span class="path3"></span></i>
                     </span>
                     <input type="text" class="form-control" placeholder="Telegram id" aria-label="Telegram id"
-                        aria-describedby="basic-addon1" />
+                        aria-describedby="basic-addon1" name="telegram-id" value="{{ $user->telegram_id}}" />
                 </div>
                 <!--end::Input group-->
 
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="telegram-text" maxlength="400"
+                    <textarea class="form-control" placeholder="Leave a comment here" id="telegram-text" name="telegram-text" maxlength="400"
                         style="min-height: 200px !important; max-height: 200px !important"></textarea>
                     <label for="floatingTextarea2">Type your text here ...</label>
                 </div>
             </div>
             <!-- End to -->
-
+            </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary send-test-telegram">Send</button>
@@ -55,3 +56,55 @@
         </div>
     </div>
 </div>
+
+@push('scripts')
+<script>
+// Send test Telegram Message
+
+$('.send-test-telegram').click(function(e) {
+  e.preventDefault(); // avoid to execute the actual submit of the form.
+
+  var form_data = $('#test_telegram_form').serialize();
+  $.ajax({
+      type: "POST",
+      url: "send-test-telegram",
+      data: form_data, // serializes the form's elements.
+      success: function(response) {
+          Swal.fire({
+              title: "Woohoooo!",
+              text: "Message Sent",
+              icon: "success",
+              showConfirmButton: false,
+              timer: 2000
+          });
+
+          $('#test_telegram_modal').modal('hide');
+      },
+      error: function(xhr, status, error) {
+          var responseJson = JSON.parse(xhr.responseText);
+          // Access the message property from the response
+          var errorMessage = responseJson.message;
+          // Display error message
+          // alert('Error: ' + errorMessage);
+          const Toast = Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+              }
+          });
+          Toast.fire({
+              icon: "error",
+              title: "Erro: " + errorMessage
+          });
+      },
+
+  });
+
+});
+</script>
+@endpush

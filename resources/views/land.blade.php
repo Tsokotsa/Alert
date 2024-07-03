@@ -114,7 +114,6 @@
             </div>
         </div>
         <!--end::Row-->
-        {{ $user }}
     </div>
     <!--end::Content container-->
 </div>

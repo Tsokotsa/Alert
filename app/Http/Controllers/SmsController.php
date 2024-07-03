@@ -6,6 +6,7 @@ use App\Helpers\Tsokotsa\generalHelpers;
 use App\Models\Sms as SMS;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\TelegramController;
 
 class SmsController extends Controller
 {
@@ -39,6 +40,21 @@ class SmsController extends Controller
         ]);
 
         return "OK";
+    }
+
+    public function send_test_Telegram(Request $request)
+    {
+        $telegram_Helper = new TelegramController();
+        $to     = $request['telegram-id'];
+        $msg    = $request['telegram-text'];
+
+        $ret = $telegram_Helper->sendMessageToUser($to, $msg);
+        return $ret;
+        if ($ret) {
+            return "OK";
+        } else {
+            return "Error Occured while sending test message ...";
+        }
     }
 
     /**

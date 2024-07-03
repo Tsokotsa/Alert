@@ -94,12 +94,13 @@ var KTAppInboxCompose = function () {
                     data: form_data + '&test-text=' + editor_content, // serializes the form's elements.
                     success: function(response) {
                         Swal.fire({
-                            title: "Good job!",
-                            text: "You clicked the button!",
+                            title: "Whoohoo!",
+                            text: "Email Sent",
                             icon: "success",
                             showConfirmButton: false,
-                            timer: 1500
+                            timer: 2000
                         });
+                        $("#close-test-telegram").modal('hide');
                     },
                     error: function(xhr, status, error) {
                         var responseJson = JSON.parse(xhr.responseText);

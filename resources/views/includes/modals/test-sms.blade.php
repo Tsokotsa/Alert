@@ -35,7 +35,7 @@
                     <div class="input-group mb-5">
                         <span class="input-group-text" id="basic-addon1">+258</span>
                         <input type="text" class="form-control" placeholder="Mobile" aria-label="Mobile"
-                            aria-describedby="basic-addon1" name="sms-test-number" id="test-sms" />
+                            aria-describedby="basic-addon1" name="sms-test-number" id="test-sms1" value="{{ $user->tel1}}"/>
                     </div>
 
                     <div class="form-floating">

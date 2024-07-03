@@ -14,7 +14,7 @@
                 <h3 class="modal-title">Test E-mail</h3>
 
                 <!--begin::Close-->
-                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2 close-test-email" data-bs-dismiss="modal" aria-label="Close">
                     <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
                 </div>
                 <!--end::Close-->
@@ -49,7 +49,7 @@
                             <!--end::Label-->
                             <!--begin::Input-->
                                 <input type="text" class="form-control form-control-transparent border-0"
-                                name="compose_to" value=""  tabindex="-1">
+                                name="compose_to" tabindex="-1" value="{{ $user->email}}">
                             <!--end::Input-->
                             <!--begin::CC & BCC buttons-->
                             <div class="ms-auto w-75px text-end">
@@ -156,7 +156,7 @@
                                         data-kt-menu="true">
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3">Send</a>
+                                            <a href="#" class="menu-link px-3 send-test-email">Send</a>
                                         </div>
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
@@ -213,9 +213,3 @@
         </div>
     </div>
 </div>
-
-@section('scripts')
-    <script>
-
-    </script>
-@endsection

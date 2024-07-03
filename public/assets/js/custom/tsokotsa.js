@@ -50,3 +50,4 @@ var quill = new Quill('#test-email-editor', {
   placeholder: 'This is a test e-mail',
   theme: 'snow' // or 'bubble'
 });
+

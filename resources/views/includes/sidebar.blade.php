@@ -2531,7 +2531,7 @@
                         <!--begin:Menu link-->
                         <span class="menu-link">
                             <span class="menu-icon">
-                                <i class="ki-outline ki-wrench text-success fs-2"></i>
+                                <i class="ki-outline ki-wrench fs-2"></i>
                             </span>
                             <span class="menu-title">API Center</span>
                             <span class="menu-arrow"></span>
@@ -2817,6 +2817,30 @@
                             <!--end:Menu item-->
                         </div>
                         <!--end:Menu sub-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link" href="{{ route('list-role-perm') }}">
+                            <span class="menu-bullet">
+                                <i class="las la-key fs-2"></i>
+                            </span>
+                            <span class="menu-title">Roles & Permissions</span>
+                        </a>
+                        <!--end:Menu link-->
+                    </div>
+                    <!--end:Menu item-->
+                    <!--begin:Menu item-->
+                    <div class="menu-item">
+                        <!--begin:Menu link-->
+                        <a class="menu-link" href="{{ route('list-users') }}">
+                            <span class="menu-bullet">
+                                <i class="las la-user fs-2"></i>
+                            </span>
+                            <span class="menu-title">List Users</span>
+                        </a>
+                        <!--end:Menu link-->
                     </div>
                     <!--end:Menu item-->
                     <!--begin:Menu item-->
