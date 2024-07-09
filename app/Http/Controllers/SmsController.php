@@ -7,6 +7,7 @@ use App\Models\Sms as SMS;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\TelegramController;
+use Illuminate\Support\Facades\Auth;
 
 class SmsController extends Controller
 {
@@ -24,39 +25,48 @@ class SmsController extends Controller
      */
     public function send_test(Request $request)
     {
-        $SMS_Helper = new SMS();
-        $type = "Sms";
         $GH = new generalHelpers();
         $campaign_type = $GH->get_campaign_typeID($this->campaign_type);
+        $user = auth()->user();
 
-        $to = $request['sms-test-number'];
-        $content = $request['sms-test-text'];
+        $data['to']             = $request['sms-test-number'];
+        $data['subject']        = "Sms";
+        $data['msg']            = $request['sms-test-text'];
+        $data['campaign_type']  = $campaign_type;
 
-        DB::table('sent_messages_logs')->insert([
-            'type_id' => $campaign_type,
-            'uid' => 0,
-            'sent_to' => $to,
-            'details' => $content,
-        ]);
+        $ret = $GH->log_Msgs($data, $user);
 
-        return "OK";
-    }
-
-    public function send_test_Telegram(Request $request)
-    {
-        $telegram_Helper = new TelegramController();
-        $to     = $request['telegram-id'];
-        $msg    = $request['telegram-text'];
-
-        $ret = $telegram_Helper->sendMessageToUser($to, $msg);
         return $ret;
-        if ($ret) {
-            return "OK";
-        } else {
-            return "Error Occured while sending test message ...";
-        }
+
     }
 
+     // Teste EMAIL API
+     public function send_test_Email(Request $request)
+     {
+         $telegram_Helper = new TelegramController();
+         $to     = $request['telegram-id'];
+         $msg    = $request['telegram-text'];
+ 
+         $ret = $telegram_Helper->sendMessageToUser($to, $msg);
+         return $ret;
+         if ($ret) {
+             return "OK";
+         } else {
+             return "Error Occured while sending test message ...";
+         }
+     }
+
+     public function getSubscribers()
+     {
+ 
+         $GH = new generalHelpers();
+         $campaign_id = $GH->get_campaign_typeID($this->campaign_type);
+         $subscribers = DB::table('contacts')
+             ->orwhereJsonContains('notify_on',"$campaign_id")
+             ->get();
+             return $subscribers;
+     }
+ 
     /**
      * Store a newly created resource in storage.
      */

@@ -2234,7 +2234,7 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="apps/contacts/getting-started.html">
+                                <a class="menu-link" href="{{ route("list-contacts") }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -2353,7 +2353,7 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="apps/inbox/listing.html">
+                                <a class="menu-link" href="{{ @route('list-email') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -2409,12 +2409,11 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app"
-                                    href="#">
+                                <a class="menu-link" href="{{ @route('list-sms') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Compose</span>
+                                    <span class="menu-title">View messages</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -2422,11 +2421,11 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="apps/chat/group.html">
+                                <a class="menu-link" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app" href="#">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">List</span>
+                                    <span class="menu-title">Compose</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -2463,12 +2462,11 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" data-bs-toggle="modal"
-                                    data-bs-target="#kt_modal_create_telegram" href="#">
+                                <a class="menu-link" href="{{ @route('list-telegram') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">Compose</span>
+                                    <span class="menu-title">View messages</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>
@@ -2476,11 +2474,11 @@
                             <!--begin:Menu item-->
                             <div class="menu-item">
                                 <!--begin:Menu link-->
-                                <a class="menu-link" href="apps/chat/group.html">
+                                <a class="menu-link" href="">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title">List</span>
+                                    <span class="menu-title">Compose</span>
                                 </a>
                                 <!--end:Menu link-->
                             </div>

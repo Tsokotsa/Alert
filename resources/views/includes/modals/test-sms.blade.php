@@ -55,7 +55,7 @@
     </div>
 </div>
 
-@section('scripts')
+@push('scripts')
     <script>
         $('.send-test-sms').click(function(e) {
             //alert('olaaaaa');
@@ -102,4 +102,4 @@
 
         });
     </script>
-@endsection
+@endpush

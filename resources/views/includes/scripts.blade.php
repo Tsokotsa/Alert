@@ -5,6 +5,7 @@
 <!--begin::Global Javascript Bundle(mandatory for all pages)-->
 <script src="assets/plugins/global/plugins.bundle.js"></script>
 <script src="assets/js/scripts.bundle.js"></script>
+<script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
 <script src="assets/js/custom/tsokotsa.js"></script>
 <!--end::Global Javascript Bundle-->
 <!--begin::Vendors Javascript(used for this page only)-->

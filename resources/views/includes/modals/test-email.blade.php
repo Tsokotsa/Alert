@@ -40,6 +40,7 @@
                 </div>
 
                 <form id="kt_inbox_compose_form" class="test_email_form"> 
+                    @csrf
                     <!--begin::Body-->
                     <div class="d-block">
                         <!--begin::To-->

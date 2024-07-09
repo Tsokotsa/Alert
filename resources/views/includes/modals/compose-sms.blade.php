@@ -254,7 +254,7 @@
                                                 <!--end:Label-->
                                                 <!--begin:Input-->
                                                 <span class="form-check form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="radio" name="c-type"
+                                                    <input class="form-check-input" type="radio" name="type"
                                                         value="1">
                                                 </span>
                                                 <!--end:Input-->
@@ -286,7 +286,7 @@
                                                 <!--begin:Input-->
                                                 <span class="form-check form-check-custom form-check-solid">
                                                     <input class="form-check-input" type="radio" checked="checked"
-                                                        name="c-type" value="2">
+                                                        name="type" value="2">
                                                 </span>
                                                 <!--end:Input-->
                                             </label>
@@ -315,7 +315,7 @@
                                                 <!--end:Label-->
                                                 <!--begin:Input-->
                                                 <span class="form-check form-check-custom form-check-solid">
-                                                    <input class="form-check-input" type="radio" name="c-type"
+                                                    <input class="form-check-input" type="radio" name="typepe"
                                                         value="3">
                                                 </span>
                                                 <!--end:Input-->
@@ -462,7 +462,7 @@
                                             <select class="form-select form-select-solid" data-control="select2"
                                                 data-dropdown-parent="#kt_modal_create_app"
                                                 data-placeholder="Select an option" data-allow-clear="true"
-                                                name="repet_interval">
+                                                name="repeat_interval">
                                                 <option></option>
                                                 <option value="0" checked="checked">None</option>
                                                 <option value="daily">Daily</option>
