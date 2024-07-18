@@ -23,5 +23,9 @@ class Contacts extends Model
         } else {                                                                                                                                                                                                                  
             $this->attributes['enable_notification'] = 'n';                                                                                                                                                                                    
         }                                                                                                                                                                                                                         
-    }                    
+    } 
+    
+    public function getFullNameAttribute() {
+        return "{$this->name} {$this->surname}";
+    }
 }

@@ -26,7 +26,7 @@ class SendTestMail extends Mailable
         Log::info("Starting to Send Test Email to " . $this->data['to'] . " with subject " . $this->data['subject']);
 
         //return $this->view('emails.test')
-        return $this->html('<h1>Hello, ' . $this->data['to'] . '</h1><p>' . $this->data['msg'] . '</p>') // Use html() for HTML content
+        return $this->html('<h1>Hello ' . $this->data['to'] . ',</h1><p>' . $this->data['msg'] . '</p>') // Use html() for HTML content
             ->subject($this->data['subject']);
 
         Log::info("Finished Sending Test email ...");

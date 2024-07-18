@@ -18,8 +18,9 @@ class ContactsController extends Controller
 
         $sites = $GH->get_all_high_sites();
         $campaigns = $GH->get_all_Active_Campaigns();
+        $contacts = Contacts::all();
 
-        return view('contacts.index', ['user' => $user, 'sites' => $sites, 'campaigns' => $campaigns]);
+        return view('contacts.index', ['user' => $user, 'sites' => $sites, 'campaigns' => $campaigns, 'contacts' => $contacts]);
     }
 
     /**

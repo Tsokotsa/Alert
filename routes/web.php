@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
+
 Route::get('/', function () {
     return view('sign-in');
 });
@@ -24,7 +25,9 @@ Route::middleware('auth')->group(function () {
     // SMS Routes
     Route::get('/sms/list', [SmsController::class, "index"])->name('list-sms');
     Route::post('/send-test-sms', [SmsController::class, "send_test"])->name('send-test-sms');
-    //  Route::get('/getall-sms', [SmsController::class, "getSubscribers"])->name('sms-subscribers');
+    
+    // TEST
+    Route::get('/test', [SmsController::class, "test"]);
 
     // Test Telegram 
     Route::get('/telegram/list', [TelegramController::class, "index"])->name('list-telegram');
@@ -39,9 +42,14 @@ Route::middleware('auth')->group(function () {
     // Roles and Permissions
     Route::get('/roles-perm', [RolesPermissionController::class, 'list_roles_perms'])->name('list-role-perm');
 
+    // Add Role
+    Route::post('/role/add', [RolesPermissionController::class, 'add_role'])->name('add-role');
+
+    // USERS
     // List Users
     Route::get('/users/list', [UserController::class, 'index'])->name('list-users');
-
+    // Add
+    Route::post('/user/add', [UserController::class, 'add_user'])->name('add-user');
 
     Route::get('/compose-email', function () {
         return view('compose-email');

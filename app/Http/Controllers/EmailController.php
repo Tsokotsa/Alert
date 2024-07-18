@@ -6,6 +6,8 @@ use App\Helpers\Tsokotsa\generalHelpers;
 use App\Mail\SendTestMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class EmailController extends Controller
@@ -29,11 +31,10 @@ class EmailController extends Controller
         $data['subject']        = $request['compose_subject'];
         $data['msg']            = $request['test-text'];
         $data['campaign_type']  = $campaign_type;
-
-        $ret = $this->sendTestEmail($data);
         
+        Mail::to($data['to'])->queue(new SendTestMail($data));
         $ret = $GH->log_Msgs($data, $user);
-        
+
         if ($ret) {
             return "OK";
         } else {
@@ -41,16 +42,17 @@ class EmailController extends Controller
         }
     }
 
-    public function sendTestEmail ($data)
+    public function getSubscribers()
     {
-         Mail::to($data['to'])->queue(new SendTestMail($data));
-        // Mail::to($data['to'])->queue(new \App\Mail\SendTestMail());
-        // Mail::send([], [], function ($message) use ($data) {
-        //     $message->to($data['to'])
-        //             ->subject($data['subject'])
-        //             ->html('<h1>Hello, ' . $data['to'] . '</h1><p>' . $data['msg'] . '</p>'); // Use html() for HTML content
-        //         });
-    
-        // return 'Email sent successfully';
+
+        $GH = new generalHelpers();
+        $campaign_id = $GH->get_campaign_typeID($this->campaign_type);
+        $subscribers = DB::table('contacts')
+            ->orwhereJsonContains('notify_on',"$campaign_id")
+            ->get();
+
+        Log::info("Finished getting all subscribers for this campign id " .$campaign_id ." Using Function: " .__FUNCTION__);
+
+            return $subscribers;
     }
 }

@@ -79,6 +79,7 @@ $('.send-test-telegram').click(function(e) {
           });
 
           $('#test_telegram_modal').modal('hide');
+          $("#test_telegram_form")[0].reset();
       },
       error: function(xhr, status, error) {
           var responseJson = JSON.parse(xhr.responseText);

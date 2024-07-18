@@ -100,7 +100,9 @@ var KTAppInboxCompose = function () {
                             showConfirmButton: false,
                             timer: 2000
                         });
-                        $("#close-test-telegram").modal('hide');
+                        $("#test_email_modal").modal('hide');
+                        submitButton.removeAttribute('data-kt-indicator');
+                        quill.deleteText(0, quill.getLength());
                     },
                     error: function(xhr, status, error) {
                         var responseJson = JSON.parse(xhr.responseText);

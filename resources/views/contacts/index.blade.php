@@ -267,7 +267,8 @@
                                     <!--begin::Modal body-->
                                     <div class="modal-body px-5 my-7">
                                         <!--begin::Form-->
-                                        <form id="modal_add_contact_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
+                                        <form id="modal_add_contact_form"
+                                            class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
                                             @csrf
                                             <div class="card border-0">
                                                 <div class="card-header card-header-stretch">
@@ -415,9 +416,10 @@
                                                                         <!--begin::Input-->
                                                                         <div
                                                                             class="form-check form-switch form-check-custom form-check-solid">
-                                                                            <input name="enable_notification" class="form-check-input h-40px w-60px"
-                                                                                type="checkbox"
-                                                                                id="flexSwitchDefault" checked/>
+                                                                            <input name="enable_notification"
+                                                                                class="form-check-input h-40px w-60px"
+                                                                                type="checkbox" id="flexSwitchDefault"
+                                                                                checked />
                                                                             <label class="form-check-label"
                                                                                 for="flexSwitchDefault">
                                                                                 Enable Communication
@@ -513,8 +515,9 @@
                                                                         <!--begin::Input-->
                                                                         <!--begin::Input group-->
                                                                         <div class="input-group mb-5">
-                                                                            <input type="text" name="telegram_id" class="form-control"
-                                                                                placeholder="" aria-label=""
+                                                                            <input type="text" name="telegram_id"
+                                                                                class="form-control" placeholder=""
+                                                                                aria-label=""
                                                                                 aria-describedby="basic-addon2" />
                                                                             <span class="input-group-text"
                                                                                 id="basic-addon2">
@@ -546,7 +549,8 @@
                                                                         </label>
                                                                         <!--end::Label-->
                                                                         <!--begin::Input-->
-                                                                        <select name="linked_location[]" class="form-select form-select-solid"
+                                                                        <select name="linked_location[]"
+                                                                            class="form-select form-select-solid"
                                                                             data-control="select2"
                                                                             data-close-on-select="false"
                                                                             data-placeholder="Select an option"
@@ -579,15 +583,17 @@
                                                                 <!--begin::Input-->
                                                                 <div class="col-12">
                                                                     <div class="form-check form-check-inline">
-                                                                        <input name="notify_on[]" class="form-check-input" type="checkbox"
-                                                                            id="inlineCheckbox1" checked="checked" value="All">
+                                                                        <input name="notify_on[]" class="form-check-input"
+                                                                            type="checkbox" id="inlineCheckbox1"
+                                                                            checked="checked" value="All">
                                                                         <label class="form-check-label"
                                                                             for="inlineCheckbox1">All</label>
                                                                     </div>
                                                                     @foreach ($campaigns as $campaign)
                                                                         <div class="form-check form-check-inline">
-                                                                            <input name="notify_on[]" class="form-check-input"
-                                                                                type="checkbox" id="inlineCheckbox1"
+                                                                            <input name="notify_on[]"
+                                                                                class="form-check-input" type="checkbox"
+                                                                                id="inlineCheckbox1"
                                                                                 value="{{ $campaign->id }}">
                                                                             <label class="form-check-label"
                                                                                 for="inlineCheckbox1">{{ $campaign->type }}</label>
@@ -632,9 +638,8 @@
                     <!--begin::Table-->
                     <div id="kt_table_users_wrapper" class="dt-container dt-bootstrap5 dt-empty-footer">
                         <div id="" class="table-responsive">
-                            <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable" id="kt_table_users"
-                                style="width: 1533.5px;">
-                                <colgroup>
+                            <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable" id="kt_table_users">
+                                {{-- <colgroup>
                                     <col style="width: 36.3984px;">
                                     <col style="width: 249.43px;">
                                     <col style="width: 239.547px;">
@@ -642,10 +647,11 @@
                                     <col style="width: 239.547px;">
                                     <col style="width: 327.477px;">
                                     <col style="width: 201.555px;">
-                                </colgroup>
+                                </colgroup> --}}
                                 <thead>
                                     <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0" role="row">
-                                        <th class="w-10px pe-2 dt-orderable-none" data-dt-column="0" rowspan="1" colspan="1" aria-label=" ">
+                                        <th class="w-10px pe-2 dt-orderable-none" data-dt-column="0" rowspan="1"
+                                            colspan="1" aria-label=" ">
                                             <span class="dt-column-title">
                                                 <div
                                                     class="form-check form-check-sm form-check-custom form-check-solid me-3">
@@ -661,8 +667,8 @@
                                                 class="dt-column-order"></span></th>
                                         <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="2"
                                             rowspan="1" colspan="1" aria-label="Role: Activate to sort"
-                                            tabindex="0"><span class="dt-column-title" role="button">Role</span><span
-                                                class="dt-column-order"></span></th>
+                                            tabindex="0"><span class="dt-column-title"
+                                                role="button">Address</span><span class="dt-column-order"></span></th>
                                         <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="3"
                                             rowspan="1" colspan="1" aria-label="Last login: Activate to sort"
                                             tabindex="0"><span class="dt-column-title" role="button">Last
@@ -670,11 +676,11 @@
                                         <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="4"
                                             rowspan="1" colspan="1" aria-label="Two-step: Activate to sort"
                                             tabindex="0"><span class="dt-column-title"
-                                                role="button">Two-step</span><span class="dt-column-order"></span></th>
+                                                role="button">Contacts</span><span class="dt-column-order"></span></th>
                                         <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="5"
                                             rowspan="1" colspan="1" aria-label="Joined Date: Activate to sort"
-                                            tabindex="0"><span class="dt-column-title" role="button">Joined
-                                                Date</span><span class="dt-column-order"></span></th>
+                                            tabindex="0"><span class="dt-column-title"
+                                                role="button">Status</span><span class="dt-column-order"></span></th>
                                         <th class="text-end min-w-100px dt-orderable-none" data-dt-column="6"
                                             rowspan="1" colspan="1" aria-label="Actions"><span
                                                 class="dt-column-title">Actions</span><span
@@ -682,7 +688,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-600 fw-semibold">
-                                    <tr>
+                                    {{-- <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid">
                                                 <input class="form-check-input" type="checkbox" value="1">
@@ -736,12 +742,60 @@
                                             </div>
                                             <!--end::Menu-->
                                         </td>
-                                    </tr>
+                                    </tr> --}}
+                                    @forelse ($contacts as $contact)
+                                        <td>
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
+                                                <input class="form-check-input" type="checkbox" value="1">
+                                            </div>
+                                        </td>
+                                        <td class="d-flex align-items-center">
+                                            <!--begin:: Avatar -->
+                                            <div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
+                                                <a href="apps/user-management/users/view.html">
+                                                    <div class="symbol-label fs-3 bg-light-danger text-danger">
+                                                        {{ substr($contact->name, 0, 1) }}</div>
+                                                </a>
+                                            </div>
+                                            <!--end::Avatar-->
+                                            <!--begin::User details-->
+                                            <div class="d-flex flex-column">
+                                                <a href="apps/user-management/users/view.html"
+                                                    class="text-gray-800 text-hover-primary mb-1">{{ $contact->full_name }}</a>
+                                                <span>{{ $contact->email }}</span>
+                                            </div>
+                                            <!--begin::User details-->
+                                        </td>
+                                        <td class="text-gray-500"><small> {{ $contact->address }} </small></td>
+                                        <td data-order="2024-07-10T08:03:14+02:00">
+                                            <div class="badge badge-light fw-bold">{{ $contact->updated_at }}</div>
+                                        </td>
+                                        <td>
+                                            <small class="badge badge-light-success">Cell1:</small>
+                                            <small>{{ $contact->cell1 }}</small>
+                                            <p><small class="badge badge-light">Cell2:</small>
+                                                <small>{{ $contact->cell2 }}</small></p>
+                                        </td>
+                                        <td><?php
+                                        if ($contact->status == 'active') {
+                                            $badge = 'badge-success';
+                                        } else {
+                                            $badge = 'badge-danger';
+                                        } ?>
+                                            <div class="badge <?= $badge ?> fw-bold">{{ $contact->status }}</div>
+                                        </td>
+                                        <td class="text-end">
+                                            <i class="las la-user-edit fs-1 text-dark" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#edit-contact"></i>
+                                            <i class="las la-trash-alt text-danger fs-1 delete-contact" style="cursor: pointer;"></i>
+                                        </td>
+                                    @empty
+                                        <p>No Contacts were found!</p>
+                                    @endforelse
                                 </tbody>
                                 <tfoot></tfoot>
                             </table>
                         </div>
-                        <div id="" class="row">
+                        {{-- <div id="" class="row">
                             <div id=""
                                 class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar">
                             </div>
@@ -765,7 +819,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <!--end::Table-->
                 </div>
@@ -775,228 +829,260 @@
         </div>
         <!--end::Content container-->
     </div>
+    <div class="modal fade" tabindex="-1" id="edit-contact">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Edit Contact</h3>
+    
+                    <!--begin::Close-->
+                    <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
+                    </div>
+                    <!--end::Close-->
+                </div>
+    
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @push('scripts')
-<script>
-    "use strict";
+    <script>
+        // Modal To Add Contact and Submit
+        "use strict";
 
-// Class definition
-var KTUsersAddUser = function () {
-    // Shared variables
-    const element = document.getElementById('modal_add_contact');
-    const form = element.querySelector('#modal_add_contact_form');
-    const modal = new bootstrap.Modal(element);
+        // Class definition
+        var KTUsersAddUser = function() {
+            // Shared variables
+            const element = document.getElementById('modal_add_contact');
+            const form = element.querySelector('#modal_add_contact_form');
+            const modal = new bootstrap.Modal(element);
 
-    // Init add schedule modal
-    var initAddUser = () => {
+            // Init add schedule modal
+            var initAddUser = () => {
 
-        // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
-        var validator = FormValidation.formValidation(
-            form,
-            {
-                fields: {
-                    'name': {
-                        validators: {
-                            notEmpty: {
-                                message: 'Name is required'
-                            }
+                // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
+                var validator = FormValidation.formValidation(
+                    form, {
+                        fields: {
+                            'name': {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Name is required'
+                                    }
+                                }
+                            },
+                            'surname': {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Surname is required'
+                                    }
+                                }
+                            },
+                            'email': {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Valid email address is required'
+                                    }
+                                }
+                            },
+                            'cell1': {
+                                validators: {
+                                    notEmpty: {
+                                        message: 'Atleast one cellphone must be selected'
+                                    }
+                                }
+                            },
+                        },
+
+                        plugins: {
+                            trigger: new FormValidation.plugins.Trigger(),
+                            bootstrap: new FormValidation.plugins.Bootstrap5({
+                                rowSelector: '.fv-row',
+                                eleInvalidClass: '',
+                                eleValidClass: ''
+                            })
                         }
-                    },
-                    'surname': {
-                        validators: {
-                            notEmpty: {
-                                message: 'Surname is required'
-                            }
-                        }
-                    },
-                    'email': {
-                        validators: {
-                            notEmpty: {
-                                message: 'Valid email address is required'
-                            }
-                        }
-                    },
-                    'cell1': {
-                        validators: {
-                            notEmpty: {
-                                message: 'Atleast one cellphone must be selected'
-                            }
-                        }
-                    },
-                },
+                    }
+                );
 
-                plugins: {
-                    trigger: new FormValidation.plugins.Trigger(),
-                    bootstrap: new FormValidation.plugins.Bootstrap5({
-                        rowSelector: '.fv-row',
-                        eleInvalidClass: '',
-                        eleValidClass: ''
-                    })
-                }
-            }
-        );
+                // Submit button handler
+                const submitButton = element.querySelector('[data-kt-users-modal-action="submit"]');
+                submitButton.addEventListener('click', e => {
+                    e.preventDefault();
 
-        // Submit button handler
-        const submitButton = element.querySelector('[data-kt-users-modal-action="submit"]');
-        submitButton.addEventListener('click', e => {
-            e.preventDefault();
+                    // Validate form before submit
+                    if (validator) {
+                        validator.validate().then(function(status) {
+                            console.log('validated!');
 
-            // Validate form before submit
-            if (validator) {
-                validator.validate().then(function (status) {
-                    console.log('validated!');
+                            if (status == 'Valid') {
+                                // Show loading indication
+                                submitButton.setAttribute('data-kt-indicator', 'on');
 
-                    if (status == 'Valid') {
-                        // Show loading indication
-                        submitButton.setAttribute('data-kt-indicator', 'on');
+                                // Disable button to avoid multiple click 
+                                submitButton.disabled = true;
 
-                        // Disable button to avoid multiple click 
-                        submitButton.disabled = true;
+                                //Serialize the form
+                                var form_data = $('#modal_add_contact_form').serialize();
 
-                        //Serialize the form
-                        var form_data = $('#modal_add_contact_form').serialize();
+                                $.ajax({
+                                    type: "POST",
+                                    url: "/contact/add",
+                                    data: form_data, // serializes the form's elements.
+                                    success: function(response) {
+                                        Swal.fire({
+                                            title: "Woohoooo!",
+                                            text: "Message Sent",
+                                            icon: "success",
+                                            showConfirmButton: false,
+                                            timer: 2000
+                                        });
 
-                        $.ajax({
-      type: "POST",
-      url: "/contact/add",
-      data: form_data, // serializes the form's elements.
-      success: function(response) {
-          Swal.fire({
-              title: "Woohoooo!",
-              text: "Message Sent",
-              icon: "success",
-              showConfirmButton: false,
-              timer: 2000
-          });
+                                        submitButton.removeAttribute(
+                                            'data-kt-indicator');
+                                        submitButton.disabled = false;
+                                    },
+                                    error: function(xhr, status, error) {
+                                        var responseJson = JSON.parse(xhr.responseText);
+                                        // Access the message property from the response
+                                        var errorMessage = responseJson.message;
 
-          submitButton.removeAttribute('data-kt-indicator');
-          submitButton.disabled = false;
-      },
-      error: function(xhr, status, error) {
-          var responseJson = JSON.parse(xhr.responseText);
-          // Access the message property from the response
-          var errorMessage = responseJson.message;
+                                        submitButton.removeAttribute(
+                                            'data-kt-indicator');
+                                        submitButton.disabled = false;
+                                        // Display error message
+                                        // alert('Error: ' + errorMessage);
+                                        const Toast = Swal.mixin({
+                                            toast: true,
+                                            position: "top-end",
+                                            showConfirmButton: false,
+                                            timer: 3000,
+                                            timerProgressBar: true,
+                                            didOpen: (toast) => {
+                                                toast.onmouseenter = Swal
+                                                    .stopTimer;
+                                                toast.onmouseleave = Swal
+                                                    .resumeTimer;
+                                            }
+                                        });
+                                        Toast.fire({
+                                            icon: "error",
+                                            title: "Erro: " + errorMessage
+                                        });
+                                    },
 
-          submitButton.removeAttribute('data-kt-indicator');
-          submitButton.disabled = false;
-          // Display error message
-          // alert('Error: ' + errorMessage);
-          const Toast = Swal.mixin({
-              toast: true,
-              position: "top-end",
-              showConfirmButton: false,
-              timer: 3000,
-              timerProgressBar: true,
-              didOpen: (toast) => {
-                  toast.onmouseenter = Swal.stopTimer;
-                  toast.onmouseleave = Swal.resumeTimer;
-              }
-          });
-          Toast.fire({
-              icon: "error",
-              title: "Erro: " + errorMessage
-          });
-      },
+                                });
 
-  });
-
-                    } else {
-                        // Show popup warning. For more info check the plugin's official documentation: https://sweetalert2.github.io/
-                        Swal.fire({
-                            text: "Sorry, looks like there are some errors detected, please try again.",
-                            icon: "error",
-                            buttonsStyling: false,
-                            confirmButtonText: "Ok, got it!",
-                            customClass: {
-                                confirmButton: "btn btn-primary"
+                            } else {
+                                // Show popup warning. For more info check the plugin's official documentation: https://sweetalert2.github.io/
+                                Swal.fire({
+                                    text: "Sorry, looks like there are some errors detected, please try again.",
+                                    icon: "error",
+                                    buttonsStyling: false,
+                                    confirmButtonText: "Ok, got it!",
+                                    customClass: {
+                                        confirmButton: "btn btn-primary"
+                                    }
+                                });
                             }
                         });
                     }
                 });
+
+                // Cancel button handler
+                const cancelButton = element.querySelector('[data-kt-users-modal-action="cancel"]');
+                cancelButton.addEventListener('click', e => {
+                    e.preventDefault();
+
+                    Swal.fire({
+                        text: "Are you sure you would like to cancel?",
+                        icon: "warning",
+                        showCancelButton: true,
+                        buttonsStyling: false,
+                        confirmButtonText: "Yes, cancel it!",
+                        cancelButtonText: "No, return",
+                        customClass: {
+                            confirmButton: "btn btn-primary",
+                            cancelButton: "btn btn-active-light"
+                        }
+                    }).then(function(result) {
+                        if (result.value) {
+                            form.reset(); // Reset form			
+                            modal.hide();
+                        } else if (result.dismiss === 'cancel') {
+                            Swal.fire({
+                                text: "Your form has not been cancelled!.",
+                                icon: "error",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok, got it!",
+                                customClass: {
+                                    confirmButton: "btn btn-primary",
+                                }
+                            });
+                        }
+                    });
+                });
+
+                // Close button handler
+                const closeButton = element.querySelector('[data-kt-users-modal-action="close"]');
+                closeButton.addEventListener('click', e => {
+                    e.preventDefault();
+
+                    Swal.fire({
+                        text: "Are you sure you would like to cancel?",
+                        icon: "warning",
+                        showCancelButton: true,
+                        buttonsStyling: false,
+                        confirmButtonText: "Yes, cancel it!",
+                        cancelButtonText: "No, return",
+                        customClass: {
+                            confirmButton: "btn btn-primary",
+                            cancelButton: "btn btn-active-light"
+                        }
+                    }).then(function(result) {
+                        if (result.value) {
+                            form.reset(); // Reset form			
+                            modal.hide();
+                        } else if (result.dismiss === 'cancel') {
+                            Swal.fire({
+                                text: "Your form has not been cancelled!.",
+                                icon: "error",
+                                buttonsStyling: false,
+                                confirmButtonText: "Ok, got it!",
+                                customClass: {
+                                    confirmButton: "btn btn-primary",
+                                }
+                            });
+                        }
+                    });
+                });
             }
+
+            return {
+                // Public functions
+                init: function() {
+                    initAddUser();
+                }
+            };
+        }();
+
+        // On document ready
+        KTUtil.onDOMContentLoaded(function() {
+            KTUsersAddUser.init();
         });
+    </script>
+<script>
+// EDIT Button
 
-        // Cancel button handler
-        const cancelButton = element.querySelector('[data-kt-users-modal-action="cancel"]');
-        cancelButton.addEventListener('click', e => {
-            e.preventDefault();
-
-            Swal.fire({
-                text: "Are you sure you would like to cancel?",
-                icon: "warning",
-                showCancelButton: true,
-                buttonsStyling: false,
-                confirmButtonText: "Yes, cancel it!",
-                cancelButtonText: "No, return",
-                customClass: {
-                    confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
-                }
-            }).then(function (result) {
-                if (result.value) {
-                    form.reset(); // Reset form			
-                    modal.hide();	
-                } else if (result.dismiss === 'cancel') {
-                    Swal.fire({
-                        text: "Your form has not been cancelled!.",
-                        icon: "error",
-                        buttonsStyling: false,
-                        confirmButtonText: "Ok, got it!",
-                        customClass: {
-                            confirmButton: "btn btn-primary",
-                        }
-                    });
-                }
-            });
-        });
-
-        // Close button handler
-        const closeButton = element.querySelector('[data-kt-users-modal-action="close"]');
-        closeButton.addEventListener('click', e => {
-            e.preventDefault();
-
-            Swal.fire({
-                text: "Are you sure you would like to cancel?",
-                icon: "warning",
-                showCancelButton: true,
-                buttonsStyling: false,
-                confirmButtonText: "Yes, cancel it!",
-                cancelButtonText: "No, return",
-                customClass: {
-                    confirmButton: "btn btn-primary",
-                    cancelButton: "btn btn-active-light"
-                }
-            }).then(function (result) {
-                if (result.value) {
-                    form.reset(); // Reset form			
-                    modal.hide();	
-                } else if (result.dismiss === 'cancel') {
-                    Swal.fire({
-                        text: "Your form has not been cancelled!.",
-                        icon: "error",
-                        buttonsStyling: false,
-                        confirmButtonText: "Ok, got it!",
-                        customClass: {
-                            confirmButton: "btn btn-primary",
-                        }
-                    });
-                }
-            });
-        });
-    }
-
-    return {
-        // Public functions
-        init: function () {
-            initAddUser();
-        }
-    };
-}();
-
-// On document ready
-KTUtil.onDOMContentLoaded(function () {
-    KTUsersAddUser.init();
-});
 </script>
 @endpush

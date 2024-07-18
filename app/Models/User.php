@@ -47,4 +47,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function getFullNameAttribute() {
+        return "{$this->name} {$this->surname}";
+    }
+
+    public function getAvatarPathAttribute() {
+        return json_decode($this->avatar, true);
+    }
 }

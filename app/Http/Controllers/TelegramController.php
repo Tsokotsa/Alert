@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Tsokotsa\generalHelpers;
+use App\Jobs\SendTestTelegramJob;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Telegram\Bot\Api;
 
 class TelegramController extends Controller
@@ -12,8 +14,7 @@ class TelegramController extends Controller
 
     private $campaign_type = "Telegram";
 
-
-
+    
     public function index()
     {
         return "ok";
@@ -25,50 +26,21 @@ class TelegramController extends Controller
         $GH = new generalHelpers();
         $campaign_type = $GH->get_campaign_typeID($this->campaign_type);
         $user = auth()->user();
+        $token = config('telegram.bots.Alert-dev.token');
 
         $data['to']             = $request['telegram-id'];
         $data['subject']        = "Telegram";
         $data['msg']            = $request['telegram-text'];
         $data['campaign_type']  = $campaign_type;
 
-        $ret = $this->sendMessageToUser($data);
-
+        SendTestTelegramJob::dispatch($data, $token);
         $ret = $GH->log_Msgs($data, $user);
 
-        return $ret;
         if ($ret) {
             return "OK";
         } else {
             return "Error Occured while sending test message ...";
         }
-    }
-
-    // public function getCampaignId()
-    // {
-    //     $campaign_id = DB::table('campaigns_type')->where('type', "$this->campaign_type")->get();
-    //     return $campaign_id;
-    // }
-
-    public function sendMessage()
-    {
-        $telegram = new Api(env('TELEGRAM_BOT_TOKEN'));
-        $response = $telegram->sendMessage([
-            'chat_id' => 'CHAT_ID',
-            'text' => 'Hello, this is a test message!'
-        ]);
-
-        return $response;
-    }
-
-    public function sendMessageToUser($data)
-    {
-        $telegram = new Api(env('TELEGRAM_BOT_TOKEN'));
-        $response = $telegram->sendMessage([
-            'chat_id' => $data['to'],
-            'text' => $data['msg']
-        ]);
-
-        return $response;
     }
 
     public function getSubscribers()
@@ -79,6 +51,9 @@ class TelegramController extends Controller
         $subscribers = DB::table('contacts')
             ->orwhereJsonContains('notify_on',"$campaign_id")
             ->get();
+
+        Log::info("Finished getting all subscribers for this campign id " .$campaign_id ." Using Function: " .__FUNCTION__);
+
             return $subscribers;
     }
 }
