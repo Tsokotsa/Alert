@@ -519,7 +519,7 @@
 
                                     <!--begin::Illustration-->
                                     <div class="text-center px-4 py-15">
-                                        <img src="/metronic8/demo1/assets/media/illustrations/sketchy-1/9.png"
+                                        <img src=""
                                             alt="" class="mw-100 mh-300px">
                                     </div>
                                     <!--end::Illustration-->

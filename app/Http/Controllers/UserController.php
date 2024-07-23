@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Permission\Models\Role;
+use Yajra\DataTables\Facades\DataTables;
 
 class UserController extends Controller
 {
@@ -18,8 +19,14 @@ class UserController extends Controller
     public function index()
     {
         $user = auth()->user();
+        // $data = User::all()->make(true);
+        $data = DataTables::make(User::query())->toJson();
         $roles = DB::table('roles')->get();
-        return view('user.index')->with(['user' => $user, 'roles' => $roles]);
+        
+        // return view('user.index', compact('data'))
+        //                         ->with(['user' => $user, 'roles' => $roles]);
+
+        return view('user.index')->with(['data' => $data, 'user' => $user, 'roles' => $roles]);
     }
 
     /**

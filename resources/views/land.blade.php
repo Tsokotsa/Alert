@@ -118,14 +118,3 @@
     <!--end::Content container-->
 </div>
 @endsection
-
-@section('scripts')
-<script src="assets/js/widgets.bundle.js"></script>
-<script src="assets/js/custom/apps/inbox/compose.js"></script>
-<script src="assets/js/custom/widgets.js"></script>
-<script src="assets/js/custom/custom-widgets/widget-1.js"></script>
-<script src="assets/js/custom/custom-widgets/widget-2.js"></script>
-<script src="assets/js/custom/apps/chat/chat.js"></script>
-<script src="assets/js/custom/utilities/modals/create-app.js"></script>
-<script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-<script src="assets/js/custom/utilities/modals/users-search.js"></script>

@@ -789,7 +789,11 @@
                                             <i class="las la-trash-alt text-danger fs-1 delete-contact" style="cursor: pointer;"></i>
                                         </td>
                                     @empty
-                                        <p>No Contacts were found!</p>
+                                    <td colspan="7" class="text-center">
+                                        <div class="">
+                                            No Contacts were found!
+                                        </div>
+                                    </td>
                                     @endforelse
                                 </tbody>
                                 <tfoot></tfoot>

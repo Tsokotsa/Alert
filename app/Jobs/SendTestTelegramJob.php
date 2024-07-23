@@ -30,7 +30,6 @@ class SendTestTelegramJob implements ShouldQueue
      */
     public function handle()
     {
-       // $token = "7285213825:AAGJyx-qhsYNiRYZJiRuZzCtcmN5vYvwzzg";
         $telegram = new Api($this->token);
         Log::info("Sending TEST Telegram Message to " .$this->data['to'] ." With content " .$this->data['msg']);
         $telegram->sendMessage([
