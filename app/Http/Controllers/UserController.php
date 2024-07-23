@@ -19,14 +19,28 @@ class UserController extends Controller
     public function index()
     {
         $user = auth()->user();
-        // $data = User::all()->make(true);
-        $data = DataTables::make(User::query())->toJson();
+        $users = User::query();
         $roles = DB::table('roles')->get();
-        
-        // return view('user.index', compact('data'))
-        //                         ->with(['user' => $user, 'roles' => $roles]);
+        $data = DataTables::of($users)->addIndexColumn()->toJson();
 
-        return view('user.index')->with(['data' => $data, 'user' => $user, 'roles' => $roles]);
+        return view('user.index')->with(['user' => $user, 'roles' => $roles]);
+    }
+
+    public function getUsers(Request $request)
+    {
+        try {
+            $users = User::query();
+
+            return DataTables::of($users)->make(true);
+        } catch (\Exception $e) {
+            return response()->json([
+                'draw' => intval($request->input('draw')),
+                'recordsTotal' => 0,
+                'recordsFiltered' => 0,
+                'data' => [],
+                'error' => $e->getMessage(),
+            ]);
+        }
     }
 
     /**
@@ -104,9 +118,10 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function edit_user($uid)
     {
-        //
+        $user_edit = User::find($uid);
+        return $user_edit;
     }
 
     /**

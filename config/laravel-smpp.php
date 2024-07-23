@@ -18,7 +18,7 @@ return [
     */
 
     'defaults' => [
-        'sender' => env('SMPP_SENDER'),
+        'sender' => env('NTT DATA'),
         'source_ton' => env('SMPP_SOURCE_TON'),
         'source_npi' => env('SMPP_SOURCE_NPI'),
         'destination_ton' => env('SMPP_DESTINATION_TON'),
@@ -63,11 +63,11 @@ return [
         ],
 
         'movitel' => [
-            'host' => 'localhost',
-            'port' => 9999,
+            'host' => '10.229.42.144',
+            'port' => 8805,
             'timeout' => 90,
-            'login' => 'login',
-            'password' => 'password'
+            'login' => 'intersol',
+            'password' => 'snter#24'
         ]
     ],
 

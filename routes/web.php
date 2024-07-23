@@ -46,10 +46,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/role/add', [RolesPermissionController::class, 'add_role'])->name('add-role');
 
     // USERS
-    // List Users
+    // Index View
     Route::get('/users/list', [UserController::class, 'index'])->name('list-users');
+    // List Users
+    Route::get('/users/getAll', [UserController::class, 'getUsers']);
     // Add
     Route::post('/user/add', [UserController::class, 'add_user'])->name('add-user');
+    // Edit 
+    Route::get('/user/{uid}/edit', [UserController::class, 'edit_user'])->name('edit-user');
 
     Route::get('/compose-email', function () {
         return view('compose-email');

@@ -1,10 +1,20 @@
 @extends('layouts.master')
 
+<style>
+.table tbody tr td div.actions{
+    display: none;
+}
+
+.table tbody tr:hover > td div.actions {
+    display: block;
+}
+</style>
+
 @section('content')
     <div id="kt_app_content" class="app-content flex-column-fluid">
-        <!--begin::Content container-->
+
         <div id="kt_app_content_container" class="app-container container-fluid">
-            <!--begin::Row-->
+            <!--begin::Card-->
             <div class="card">
                 <!--begin::Card header-->
                 <div class="card-header border-0 pt-6">
@@ -45,23 +55,23 @@
                                         <select class="form-select form-select-solid fw-bold select2-hidden-accessible"
                                             data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true"
                                             data-kt-user-table-filter="role" data-hide-search="true"
-                                            data-select2-id="select2-data-1-vx9x" tabindex="-1" aria-hidden="true"
+                                            data-select2-id="select2-data-1-f8vh" tabindex="-1" aria-hidden="true"
                                             data-kt-initialized="1">
-                                            <option data-select2-id="select2-data-3-tmop"></option>
+                                            <option data-select2-id="select2-data-3-oh7y"></option>
                                             <option value="Administrator">Administrator</option>
                                             <option value="Analyst">Analyst</option>
                                             <option value="Developer">Developer</option>
                                             <option value="Support">Support</option>
                                             <option value="Trial">Trial</option>
                                         </select><span class="select2 select2-container select2-container--bootstrap5"
-                                            dir="ltr" data-select2-id="select2-data-2-asiz" style="width: 100%;"><span
+                                            dir="ltr" data-select2-id="select2-data-2-d1k8" style="width: 100%;"><span
                                                 class="selection"><span
                                                     class="select2-selection select2-selection--single form-select form-select-solid fw-bold"
                                                     role="combobox" aria-haspopup="true" aria-expanded="false"
                                                     tabindex="0" aria-disabled="false"
-                                                    aria-labelledby="select2-hrk9-container"
-                                                    aria-controls="select2-hrk9-container"><span
-                                                        class="select2-selection__rendered" id="select2-hrk9-container"
+                                                    aria-labelledby="select2-45qw-container"
+                                                    aria-controls="select2-45qw-container"><span
+                                                        class="select2-selection__rendered" id="select2-45qw-container"
                                                         role="textbox" aria-readonly="true" title="Select option"><span
                                                             class="select2-selection__placeholder">Select
                                                             option</span></span><span class="select2-selection__arrow"
@@ -76,19 +86,19 @@
                                         <select class="form-select form-select-solid fw-bold select2-hidden-accessible"
                                             data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true"
                                             data-kt-user-table-filter="two-step" data-hide-search="true"
-                                            data-select2-id="select2-data-4-7da5" tabindex="-1" aria-hidden="true"
+                                            data-select2-id="select2-data-4-vakf" tabindex="-1" aria-hidden="true"
                                             data-kt-initialized="1">
-                                            <option data-select2-id="select2-data-6-lem6"></option>
+                                            <option data-select2-id="select2-data-6-xnp9"></option>
                                             <option value="Enabled">Enabled</option>
                                         </select><span class="select2 select2-container select2-container--bootstrap5"
-                                            dir="ltr" data-select2-id="select2-data-5-nc24" style="width: 100%;"><span
+                                            dir="ltr" data-select2-id="select2-data-5-ml7p" style="width: 100%;"><span
                                                 class="selection"><span
                                                     class="select2-selection select2-selection--single form-select form-select-solid fw-bold"
                                                     role="combobox" aria-haspopup="true" aria-expanded="false"
                                                     tabindex="0" aria-disabled="false"
-                                                    aria-labelledby="select2-1ybn-container"
-                                                    aria-controls="select2-1ybn-container"><span
-                                                        class="select2-selection__rendered" id="select2-1ybn-container"
+                                                    aria-labelledby="select2-l3k4-container"
+                                                    aria-controls="select2-l3k4-container"><span
+                                                        class="select2-selection__rendered" id="select2-l3k4-container"
                                                         role="textbox" aria-readonly="true" title="Select option"><span
                                                             class="select2-selection__placeholder">Select
                                                             option</span></span><span class="select2-selection__arrow"
@@ -166,9 +176,9 @@
                                                 <select name="role" data-control="select2"
                                                     data-placeholder="Select a role" data-hide-search="true"
                                                     class="form-select form-select-solid fw-bold select2-hidden-accessible"
-                                                    data-select2-id="select2-data-7-538l" tabindex="-1"
+                                                    data-select2-id="select2-data-7-w4bx" tabindex="-1"
                                                     aria-hidden="true" data-kt-initialized="1">
-                                                    <option data-select2-id="select2-data-9-rfs7"></option>
+                                                    <option data-select2-id="select2-data-9-swpn"></option>
                                                     <option value="Administrator">Administrator</option>
                                                     <option value="Analyst">Analyst</option>
                                                     <option value="Developer">Developer</option>
@@ -176,15 +186,15 @@
                                                     <option value="Trial">Trial</option>
                                                 </select><span
                                                     class="select2 select2-container select2-container--bootstrap5"
-                                                    dir="ltr" data-select2-id="select2-data-8-vbjf"
+                                                    dir="ltr" data-select2-id="select2-data-8-suek"
                                                     style="width: 100%;"><span class="selection"><span
                                                             class="select2-selection select2-selection--single form-select form-select-solid fw-bold"
                                                             role="combobox" aria-haspopup="true" aria-expanded="false"
                                                             tabindex="0" aria-disabled="false"
-                                                            aria-labelledby="select2-role-4a-container"
-                                                            aria-controls="select2-role-4a-container"><span
+                                                            aria-labelledby="select2-role-hz-container"
+                                                            aria-controls="select2-role-hz-container"><span
                                                                 class="select2-selection__rendered"
-                                                                id="select2-role-4a-container" role="textbox"
+                                                                id="select2-role-hz-container" role="textbox"
                                                                 aria-readonly="true" title="Select a role"><span
                                                                     class="select2-selection__placeholder">Select a
                                                                     role</span></span><span
@@ -204,24 +214,24 @@
                                                 <select name="format" data-control="select2"
                                                     data-placeholder="Select a format" data-hide-search="true"
                                                     class="form-select form-select-solid fw-bold select2-hidden-accessible"
-                                                    data-select2-id="select2-data-10-xep0" tabindex="-1"
+                                                    data-select2-id="select2-data-10-eqfn" tabindex="-1"
                                                     aria-hidden="true" data-kt-initialized="1">
-                                                    <option data-select2-id="select2-data-12-s4r8"></option>
+                                                    <option data-select2-id="select2-data-12-6yjg"></option>
                                                     <option value="excel">Excel</option>
                                                     <option value="pdf">PDF</option>
                                                     <option value="cvs">CVS</option>
                                                     <option value="zip">ZIP</option>
                                                 </select><span
                                                     class="select2 select2-container select2-container--bootstrap5"
-                                                    dir="ltr" data-select2-id="select2-data-11-aqux"
+                                                    dir="ltr" data-select2-id="select2-data-11-5j7q"
                                                     style="width: 100%;"><span class="selection"><span
                                                             class="select2-selection select2-selection--single form-select form-select-solid fw-bold"
                                                             role="combobox" aria-haspopup="true" aria-expanded="false"
                                                             tabindex="0" aria-disabled="false"
-                                                            aria-labelledby="select2-format-12-container"
-                                                            aria-controls="select2-format-12-container"><span
+                                                            aria-labelledby="select2-format-kf-container"
+                                                            aria-controls="select2-format-kf-container"><span
                                                                 class="select2-selection__rendered"
-                                                                id="select2-format-12-container" role="textbox"
+                                                                id="select2-format-kf-container" role="textbox"
                                                                 aria-readonly="true" title="Select a format"><span
                                                                     class="select2-selection__placeholder">Select a
                                                                     format</span></span><span
@@ -266,95 +276,127 @@
                     <!--begin::Table-->
                     <div id="kt_table_users_wrapper" class="dt-container dt-bootstrap5 dt-empty-footer">
                         <div id="" class="table-responsive">
-                            <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable" id="users_datatable"
+                            <table class="table align-middle table-row-dashed fs-6 gy-5 dataTable" id="kt_table_users"
                                 style="width: 1533.5px;">
-                                <colgroup>
-                                    <col style="width: 36.3984px;">
-                                    <col style="width: 249.43px;">
-                                    <col style="width: 239.547px;">
-                                    <col style="width: 239.547px;">
-                                    <col style="width: 239.547px;">
-                                    <col style="width: 327.477px;">
-                                    <col style="width: 201.555px;">
-                                </colgroup>
                                 <thead>
                                     <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0" role="row">
-                                        <th class="w-10px pe-2 dt-orderable-none" data-dt-column="0" rowspan="1" colspan="1" aria-label="">
+                                        <th class="w-10px pe-2 dt-orderable-none" data-dt-column="0" rowspan="1"
+                                            colspan="1" aria-label="">
                                             <span class="dt-column-title">
                                                 <div
                                                     class="form-check form-check-sm form-check-custom form-check-solid me-3">
                                                     <input class="form-check-input" type="checkbox" data-kt-check="true"
-                                                        data-kt-check-target="#kt_table_users .form-check-input"
-                                                        value="1">
+                                                        data-kt-check-target="#kt_table_users .form-check-input"value="1">
                                                 </div>
                                             </span><span class="dt-column-order"></span>
                                         </th>
                                         <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="1"
                                             rowspan="1" colspan="1" aria-label="User: Activate to sort"
-                                            tabindex="0"><span class="dt-column-title" role="button">User</span><span
+                                            tabindex="0"><span class="dt-column-title" role="button">Name</span><span
                                                 class="dt-column-order"></span></th>
                                         <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="2"
                                             rowspan="1" colspan="1" aria-label="Role: Activate to sort"
-                                            tabindex="0"><span class="dt-column-title" role="button">Role</span><span
-                                                class="dt-column-order"></span></th>
+                                            tabindex="0"><span class="dt-column-title"
+                                                role="button">Surname</span><span class="dt-column-order"></span></th>
                                         <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="3"
                                             rowspan="1" colspan="1" aria-label="Last login: Activate to sort"
-                                            tabindex="0"><span class="dt-column-title" role="button">Last
-                                                login</span><span class="dt-column-order"></span></th>
+                                            tabindex="0"><span class="dt-column-title" role="button">Email</span><span
+                                                class="dt-column-order"></span></th>
                                         <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="4"
                                             rowspan="1" colspan="1" aria-label="Two-step: Activate to sort"
                                             tabindex="0"><span class="dt-column-title"
-                                                role="button">Two-step</span><span class="dt-column-order"></span></th>
+                                                role="button">Contact</span><span class="dt-column-order"></span></th>
                                         <th class="min-w-125px dt-orderable-asc dt-orderable-desc" data-dt-column="5"
                                             rowspan="1" colspan="1" aria-label="Joined Date: Activate to sort"
                                             tabindex="0"><span class="dt-column-title" role="button">Joined
-                                                Date</span><span class="dt-column-order"></span></th>
+                                                Date</span><span class="dt-column-order"></span>
+                                        </th>
                                         <th class="text-end min-w-100px dt-orderable-none" data-dt-column="6"
                                             rowspan="1" colspan="1" aria-label="Actions"><span
                                                 class="dt-column-title">Actions</span><span
-                                                class="dt-column-order"></span></th>
+                                                class="dt-column-order"></span>
+                                        </th>
                                     </tr>
                                 </thead>
-                                <tbody class="text-gray-600 fw-semibold">
-
-                                </tbody>
                                 <tfoot></tfoot>
                             </table>
+                        </div>
+                        <div id="" class="row">
+                            <div id=""
+                                class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar">
+                            </div>
+                            <div id=""
+                                class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end">
+
+                            </div>
                         </div>
                     </div>
                     <!--end::Table-->
                 </div>
                 <!--end::Card body-->
             </div>
-            <!--end::Row-->
-
-            <div> 
-                <table id="members">
-                    
-                </table>
-            </div>
-
+            <!--end::Card-->
         </div>
-        <!--end::Content container-->
+
     </div>
     @include('user.modals.add')
 @endsection
 
 @push('scripts')
 <script>
+
 "use strict";
 
-// Class definition
-var KTDatatablesServerSide = function () {
-    // Shared variables
-    var table;
-    var dt;
-    var filterPayment;
+var KTUsersList = function () {
+    // Define shared variables
+    var table = document.getElementById('kt_table_users');
+    var datatable;
+    var toolbarBase;
+    var toolbarSelected;
+    var selectedCount;
 
     // Private functions
-    var initDatatable = function () {
-        dt = $("#users_datatable").DataTable({
-            searchDelay: 500,
+    var initUserTable = function () {
+        // Set date data order
+        const tableRows = table.querySelectorAll('tbody tr');
+
+        tableRows.forEach(row => {
+            const dateRow = row.querySelectorAll('td');
+            const created_at = dateRow[5].innerText.toLowerCase(); // Get last login time
+            let timeCount = 0;
+            let timeFormat = 'minutes';
+
+            // Determine date & time format -- add more formats when necessary
+            if (created_at.includes('yesterday')) {
+                timeCount = 1;
+                timeFormat = 'days';
+            } else if (created_at.includes('mins')) {
+                timeCount = parseInt(created_at.replace(/\D/g, ''));
+                timeFormat = 'minutes';
+            } else if (created_at.includes('hours')) {
+                timeCount = parseInt(created_at.replace(/\D/g, ''));
+                timeFormat = 'hours';
+            } else if (created_at.includes('days')) {
+                timeCount = parseInt(created_at.replace(/\D/g, ''));
+                timeFormat = 'days';
+            } else if (created_at.includes('weeks')) {
+                timeCount = parseInt(created_at.replace(/\D/g, ''));
+                timeFormat = 'weeks';
+            }
+
+            // Subtract date/time from today -- more info on moment datetime subtraction: https://momentjs.com/docs/#/durations/subtract/
+            const realDate = moment().subtract(timeCount, timeFormat).format();
+
+            // Insert real date to last login attribute
+            dateRow[3].setAttribute('data-order', realDate);
+
+            // Set real date for joined column
+            const joinedDate = moment(dateRow[5].innerHTML, "DD MMM YYYY, LT").format(); // select date from 5th column in table
+            dateRow[5].setAttribute('data-order', joinedDate);
+        });
+
+        // Init datatable --- more info on datatables: https://datatables.net/manual/
+        datatable = $(table).DataTable({
             processing: true,
             serverSide: true,
             order: [[5, 'desc']],
@@ -365,22 +407,16 @@ var KTDatatablesServerSide = function () {
                 className: 'row-selected'
             },
             ajax: {
-                url: "/list/users",
+                url: "/users/getAll",
             },
             columns: [
-                // { data: 'id' },
-                // { data: 'Name' },
-                // { data: 'Email' },
-                // { data: 'Company' },
-                // { data: 'CreditCardNumber' },
-                // { data: 'Datetime' },
-                // { data: null },
-                { data: '1' },
-                { data: '1' },
-                { data: '1' },
-                { data: '1' },
-                { data: '1' },
-                { data: '1' },
+                { data: 'id' },
+                { data: 'name' },
+                { data: 'surname' },
+                { data: 'email' },
+                { data: 'tel1' },
+                { data: 'created_at' },
+                
             ],
             columnDefs: [
                 {
@@ -389,114 +425,96 @@ var KTDatatablesServerSide = function () {
                     render: function (data) {
                         return `
                             <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                <input class="form-check-input" type="checkbox" value="${data}" />
+                                <input class="form-check-input" type="checkbox" value="id" />
                             </div>`;
                     }
                 },
                 {
-                    targets: 4,
-                    render: function (data, type, row) {
-                        return `<img src="${hostUrl}media/svg/card-logos/${row.CreditCardType}.svg" class="w-35px me-3" alt="${row.CreditCardType}">` + data;
-                    }
-                },
-                {
-                    targets: -1,
-                    data: null,
-                    orderable: false,
+                    targets: 6,
+                    data: 'id',
                     className: 'text-end',
-                    render: function (data, type, row) {
-                        return `
-                            <a href="#" class="btn btn-light btn-active-light-primary btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-flip="top-end">
-                                Actions
-                                <span class="svg-icon fs-5 m-0">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                            <polygon points="0 0 24 0 24 24 0 24"></polygon>
-                                            <path d="M6.70710678,15.7071068 C6.31658249,16.0976311 5.68341751,16.0976311 5.29289322,15.7071068 C4.90236893,15.3165825 4.90236893,14.6834175 5.29289322,14.2928932 L11.2928932,8.29289322 C11.6714722,7.91431428 12.2810586,7.90106866 12.6757246,8.26284586 L18.6757246,13.7628459 C19.0828436,14.1360383 19.1103465,14.7686056 18.7371541,15.1757246 C18.3639617,15.5828436 17.7313944,15.6103465 17.3242754,15.2371541 L12.0300757,10.3841378 L6.70710678,15.7071068 Z" fill="currentColor" fill-rule="nonzero" transform="translate(12.000003, 11.999999) rotate(-180.000000) translate(-12.000003, -11.999999)"></path>
-                                        </g>
-                                    </svg>
-                                </span>
-                            </a>
-                            <!--begin::Menu-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3" data-kt-docs-table-filter="edit_row">
-                                        Edit
-                                    </a>
-                                </div>
-                                <!--end::Menu item-->
-
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a href="#" class="menu-link px-3" data-kt-docs-table-filter="delete_row">
-                                        Delete
-                                    </a>
-                                </div>
-                                <!--end::Menu item-->
-                            </div>
-                            <!--end::Menu-->
-                        `;
-                    },
+                     render: function (data, type, row) {
+                        
+                         return `<div class="actions">
+                                            <a href="/user/${data}/edit"><i class="las la-user-edit fs-1 text-dark" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#edit-contact"></i></a>
+                                            <i class="las la-trash-alt text-danger fs-1 delete-contact" style="cursor: pointer;"></i>
+                                        </div>`;
+                     },
                 },
+   
             ],
-            Add data-filter attribute
-            createdRow: function (row, data, dataIndex) {
-                $(row).find('td:eq(4)').attr('data-filter', data.CreditCardType);
-            }
         });
 
-        table = dt.$;
-
         // Re-init functions on every table re-draw -- more info: https://datatables.net/reference/event/draw
-        dt.on('draw', function () {
+        datatable.on('draw', function () {
             initToggleToolbar();
-            toggleToolbars();
             handleDeleteRows();
-            KTMenu.createInstances();
+            toggleToolbars();
         });
     }
 
     // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
-    var handleSearchDatatable = function () {
-        const filterSearch = document.querySelector('[data-kt-docs-table-filter="search"]');
+    var handleSearchDatatable = () => {
+        const filterSearch = document.querySelector('[data-kt-user-table-filter="search"]');
         filterSearch.addEventListener('keyup', function (e) {
-            dt.search(e.target.value).draw();
+            datatable.search(e.target.value).draw();
         });
     }
 
     // Filter Datatable
     var handleFilterDatatable = () => {
         // Select filter options
-        filterPayment = document.querySelectorAll('[data-kt-docs-table-filter="payment_type"] [name="payment_type"]');
-        const filterButton = document.querySelector('[data-kt-docs-table-filter="filter"]');
+        const filterForm = document.querySelector('[data-kt-user-table-filter="form"]');
+        const filterButton = filterForm.querySelector('[data-kt-user-table-filter="filter"]');
+        const selectOptions = filterForm.querySelectorAll('select');
 
         // Filter datatable on submit
         filterButton.addEventListener('click', function () {
+            var filterString = '';
+
             // Get filter values
-            let paymentValue = '';
+            selectOptions.forEach((item, index) => {
+                if (item.value && item.value !== '') {
+                    if (index !== 0) {
+                        filterString += ' ';
+                    }
 
-            // Get payment value
-            filterPayment.forEach(r => {
-                if (r.checked) {
-                    paymentValue = r.value;
-                }
-
-                // Reset payment value if "All" is selected
-                if (paymentValue === 'all') {
-                    paymentValue = '';
+                    // Build filter value options
+                    filterString += item.value;
                 }
             });
 
             // Filter datatable --- official docs reference: https://datatables.net/reference/api/search()
-            dt.search(paymentValue).draw();
+            datatable.search(filterString).draw();
         });
     }
 
-    // Delete customer
+    // Reset Filter
+    var handleResetForm = () => {
+        // Select reset button
+        const resetButton = document.querySelector('[data-kt-user-table-filter="reset"]');
+
+        // Reset datatable
+        resetButton.addEventListener('click', function () {
+            // Select filter options
+            const filterForm = document.querySelector('[data-kt-user-table-filter="form"]');
+            const selectOptions = filterForm.querySelectorAll('select');
+
+            // Reset select2 values -- more info: https://select2.org/programmatic-control/add-select-clear-items
+            selectOptions.forEach(select => {
+                $(select).val('').trigger('change');
+            });
+
+            // Reset datatable --- official docs reference: https://datatables.net/reference/api/search()
+            datatable.search('').draw();
+        });
+    }
+
+
+    // Delete subscirption
     var handleDeleteRows = () => {
         // Select all delete buttons
-        const deleteButtons = document.querySelectorAll('[data-kt-docs-table-filter="delete_row"]');
+        const deleteButtons = table.querySelectorAll('[data-kt-users-table-filter="delete_row"]');
 
         deleteButtons.forEach(d => {
             // Delete button on click
@@ -506,12 +524,12 @@ var KTDatatablesServerSide = function () {
                 // Select parent row
                 const parent = e.target.closest('tr');
 
-                // Get customer name
-                const customerName = parent.querySelectorAll('td')[1].innerText;
+                // Get user name
+                const userName = parent.querySelectorAll('td')[1].querySelectorAll('a')[1].innerText;
 
                 // SweetAlert2 pop up --- official docs reference: https://sweetalert2.github.io/
                 Swal.fire({
-                    text: "Are you sure you want to delete " + customerName + "?",
+                    text: "Are you sure you want to delete " + userName + "?",
                     icon: "warning",
                     showCancelButton: true,
                     buttonsStyling: false,
@@ -523,26 +541,20 @@ var KTDatatablesServerSide = function () {
                     }
                 }).then(function (result) {
                     if (result.value) {
-                        // Simulate delete request -- for demo purpose only
                         Swal.fire({
-                            text: "Deleting " + customerName,
-                            icon: "info",
+                            text: "You have deleted " + userName + "!.",
+                            icon: "success",
                             buttonsStyling: false,
-                            showConfirmButton: false,
-                            timer: 2000
+                            confirmButtonText: "Ok, got it!",
+                            customClass: {
+                                confirmButton: "btn fw-bold btn-primary",
+                            }
                         }).then(function () {
-                            Swal.fire({
-                                text: "You have deleted " + customerName + "!.",
-                                icon: "success",
-                                buttonsStyling: false,
-                                confirmButtonText: "Ok, got it!",
-                                customClass: {
-                                    confirmButton: "btn fw-bold btn-primary",
-                                }
-                            }).then(function () {
-                                // delete row data from server and re-draw datatable
-                                dt.draw();
-                            });
+                            // Remove current row
+                            datatable.row($(parent)).remove().draw();
+                        }).then(function () {
+                            // Detect checked checkboxes
+                            toggleToolbars();
                         });
                     } else if (result.dismiss === 'cancel') {
                         Swal.fire({
@@ -560,30 +572,17 @@ var KTDatatablesServerSide = function () {
         });
     }
 
-    // Reset Filter
-    var handleResetForm = () => {
-        // Select reset button
-        const resetButton = document.querySelector('[data-kt-docs-table-filter="reset"]');
-
-        // Reset datatable
-        resetButton.addEventListener('click', function () {
-            // Reset payment type
-            filterPayment[0].checked = true;
-
-            // Reset datatable --- official docs reference: https://datatables.net/reference/api/search()
-            dt.search('').draw();
-        });
-    }
-
     // Init toggle toolbar
-    var initToggleToolbar = function () {
+    var initToggleToolbar = () => {
         // Toggle selected action toolbar
         // Select all checkboxes
-        const container = document.querySelector('#users_datatable');
-        const checkboxes = container.querySelectorAll('[type="checkbox"]');
+        const checkboxes = table.querySelectorAll('[type="checkbox"]');
 
         // Select elements
-        const deleteSelected = document.querySelector('[data-kt-docs-table-select="delete_selected"]');
+        toolbarBase = document.querySelector('[data-kt-user-table-toolbar="base"]');
+        toolbarSelected = document.querySelector('[data-kt-user-table-toolbar="selected"]');
+        selectedCount = document.querySelector('[data-kt-user-table-select="selected_count"]');
+        const deleteSelected = document.querySelector('[data-kt-user-table-select="delete_selected"]');
 
         // Toggle delete selected toolbar
         checkboxes.forEach(c => {
@@ -603,39 +602,36 @@ var KTDatatablesServerSide = function () {
                 icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
-                showLoaderOnConfirm: true,
                 confirmButtonText: "Yes, delete!",
                 cancelButtonText: "No, cancel",
                 customClass: {
                     confirmButton: "btn fw-bold btn-danger",
                     cancelButton: "btn fw-bold btn-active-light-primary"
-                },
+                }
             }).then(function (result) {
                 if (result.value) {
-                    // Simulate delete request -- for demo purpose only
                     Swal.fire({
-                        text: "Deleting selected customers",
-                        icon: "info",
+                        text: "You have deleted all selected customers!.",
+                        icon: "success",
                         buttonsStyling: false,
-                        showConfirmButton: false,
-                        timer: 2000
+                        confirmButtonText: "Ok, got it!",
+                        customClass: {
+                            confirmButton: "btn fw-bold btn-primary",
+                        }
                     }).then(function () {
-                        Swal.fire({
-                            text: "You have deleted all selected customers!.",
-                            icon: "success",
-                            buttonsStyling: false,
-                            confirmButtonText: "Ok, got it!",
-                            customClass: {
-                                confirmButton: "btn fw-bold btn-primary",
+                        // Remove all selected customers
+                        checkboxes.forEach(c => {
+                            if (c.checked) {
+                                datatable.row($(c.closest('tbody tr'))).remove().draw();
                             }
-                        }).then(function () {
-                            // delete row data from server and re-draw datatable
-                            dt.draw();
                         });
 
                         // Remove header checked box
-                        const headerCheckbox = container.querySelectorAll('[type="checkbox"]')[0];
+                        const headerCheckbox = table.querySelectorAll('[type="checkbox"]')[0];
                         headerCheckbox.checked = false;
+                    }).then(function () {
+                        toggleToolbars(); // Detect checked checkboxes
+                        initToggleToolbar(); // Re-init toolbar to recalculate checkboxes
                     });
                 } else if (result.dismiss === 'cancel') {
                     Swal.fire({
@@ -653,15 +649,9 @@ var KTDatatablesServerSide = function () {
     }
 
     // Toggle toolbars
-    var toggleToolbars = function () {
-        // Define variables
-        const container = document.querySelector('#users_datatable');
-        const toolbarBase = document.querySelector('[data-kt-docs-table-toolbar="base"]');
-        const toolbarSelected = document.querySelector('[data-kt-docs-table-toolbar="selected"]');
-        const selectedCount = document.querySelector('[data-kt-docs-table-select="selected_count"]');
-
-        // Select refreshed checkbox DOM elements
-        const allCheckboxes = container.querySelectorAll('tbody [type="checkbox"]');
+    const toggleToolbars = () => {
+        // Select refreshed checkbox DOM elements 
+        const allCheckboxes = table.querySelectorAll('tbody [type="checkbox"]');
 
         // Detect checkboxes state & count
         let checkedState = false;
@@ -686,33 +676,29 @@ var KTDatatablesServerSide = function () {
         }
     }
 
-    // Public methods
     return {
+        // Public functions  
         init: function () {
-            initDatatable();
-            handleSearchDatatable();
+            if (!table) {
+                return;
+            }
+
+            initUserTable();
             initToggleToolbar();
-            handleFilterDatatable();
-            handleDeleteRows();
+            handleSearchDatatable();
             handleResetForm();
+            handleDeleteRows();
+            handleFilterDatatable();
+
         }
     }
 }();
 
 // On document ready
 KTUtil.onDOMContentLoaded(function () {
-    KTDatatablesServerSide.init();
+    KTUsersList.init();
 });
-</script>
 
-
-<script>
-    $('#members').DataTable( {
-    serverSide: true,
-    ajax: {
-        url: '/users/list',
-        type: 'GET'
-    }
-} );
-</script>
+// Remove Hidden 
+</script>    
 @endpush

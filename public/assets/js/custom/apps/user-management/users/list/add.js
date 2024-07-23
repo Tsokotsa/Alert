@@ -15,14 +15,14 @@ var KTUsersAddUser = function () {
             form,
             {
                 fields: {
-                    'user_name': {
+                    'name': {
                         validators: {
                             notEmpty: {
                                 message: 'Full name is required'
                             }
                         }
                     },
-                    'user_email': {
+                    'email': {
                         validators: {
                             notEmpty: {
                                 message: 'Valid email address is required'
